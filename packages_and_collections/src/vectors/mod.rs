@@ -6,7 +6,7 @@ pub fn create_and_print_vector() {
     println!("Looping through my vectors:");
 
     println!("Number vector");
-    for num in num_vec {
+    for num in &num_vec {
         print!("{num},");
     }
     println!();
@@ -16,4 +16,11 @@ pub fn create_and_print_vector() {
         print!("{str}, ")
     }
     println!();
+
+    let third_num: Option<&i32> = num_vec.get(2);
+    match third_num {
+        Some(third_num) => println!("The third element is {third_num}"),
+        None => println!("There is no third element."),
+    }
+
 }
